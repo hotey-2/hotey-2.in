@@ -1,0 +1,37 @@
+/* Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('1.jpeg') no-repeat center center/cover; /* Initial background image */
+    color: white; /* White text color */
+    position: relative; /* To ensure the notification appears above */
+    transition: background 2s ease-in-out; /* Fade transition for background image */
+}
+
+/* Notification box styling */
+#notification {
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    border-radius: 15px; /* Rounded corners for the notification */
+    padding: 40px 60px; /* Larger padding for a bigger notification box */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Larger shadow effect */
+    text-align: center;
+    font-size: 2rem; /* Larger font size */
+    opacity: 0; /* Initially invisible */
+    transform: translateY(20px); /* Starts below the screen */
+    transition: all 0.6s ease; /* Smooth transition for opacity and position */
+    max-width: 80%; /* Maximum width of the notification box */
+    position: absolute; /* Position the notification box absolutely */
+    z-index: 10; /* Ensure the notification is above the background */
+    left: 50%; /* Center the box horizontally */
+    transform: translateX(-50%) translateY(20px); /* Ensure it is horizontally centered */
+}
+
+/* Class to make the notification visible */
+#notification.active {
+    opacity: 1; /* Make it visible */
+    transform: translateX(-50%) translateY(0); /* Bring it into view */
+}
